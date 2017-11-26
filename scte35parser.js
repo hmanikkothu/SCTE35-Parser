@@ -45,7 +45,7 @@ function SCTE35Parser() {
 		}
 		for (var i = 0; i < data.length; i+=2) {
 			var d = parseInt('0x' + data[i] + data[i+1]);
-			this.writeToBitArray(parseInt('0x' + data[i] + data[i+1]));
+			this.writeToBitArray(parseInt(data[i] + data[i+1], 16));
 		}
 		this.parse();
 		return this.spliceInfo;
