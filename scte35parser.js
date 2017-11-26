@@ -48,6 +48,7 @@ function SCTE35Parser() {
 			this.writeToBitArray(parseInt('0x' + data[i] + data[i+1]));
 		}
 		this.parse();
+		return this.spliceInfo;
 	}
 	
 	this.parse = function() {
@@ -225,10 +226,10 @@ function SCTE35Parser() {
 		//var testString = 'fc300800000000000000001000067f234567890010020043554549400000007f9c00000000';
 		var testString = 'fc302000000000000000fff00f05000000007fcfffa7f7abd400680001000088f3ebaf';
 		console.log('testString = ' + testString);
-		this.parseFromHex(testString);
+		var spliceInfo = this.parseFromHex(testString);
 		console.log(this.scte35_array);
-		console.log(JSON.stringify(this.spliceInfo));
+		console.log(JSON.stringify(spliceInfo));
 				
 	}
-	
+		
 }
