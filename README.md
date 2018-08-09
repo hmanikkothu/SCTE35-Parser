@@ -4,9 +4,9 @@ This is a helper file to parse the SCTE-35 data in the form of a hex string (usu
 
 ## Sample usage: 
 ```
-var parser = new SCTE35Parser()
+var parser = new SCTE35Parser();
 var testString = 'fc302000000000000000fff00f05000000007fcfffa7f7abd400680001000088f3ebaf';
-var spliceInfo = this.parseFromHex(testString);
+var spliceInfo = parser.parseFromHex(testString);
 console.log(JSON.stringify(spliceInfo));
 
 
